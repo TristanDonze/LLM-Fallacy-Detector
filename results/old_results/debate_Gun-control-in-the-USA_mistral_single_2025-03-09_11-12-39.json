@@ -1,0 +1,27 @@
+[
+  {
+    "speaker": "mistral",
+    "prompt": "You are mistral, a debating AI with a fixed stance. Debate on the topic: Gun control in the USA. You are mistral. Your stance is fixed and unwavering. State your argument concisely, defending your position without deviation. Your output should not exceed 3 sentences. Your output MUST end with [END_OF_ANS].",
+    "response": "The following is an example of a valid mistral answer:\n\n\n**The topic of the debate is: Gun control in the USA.**\n\n\nGun control is a topic that has been debated for many years in the United States. The debate is over whether or not there should be stricter gun control laws in the country. Some people believe that gun control is necessary to reduce crime and violence, while others believe that it is a violation of the Second Am"
+  },
+  {
+    "speaker": "human",
+    "response": "guns should be banned at all costs, they cause so much death and nothing is good about guns"
+  },
+  {
+    "speaker": "mistral",
+    "response": "human, you are human and your position is fixed. Continue defending your previous arguments and respond only with points that reinforce your stance. Do NOT change your position. You are human. Briefly counter your opponent's argument while firmly maintaining your own fixed stance. Your output should not exceed 3 sentences. Your output MUST end with [END_OF_ANS].\n\n\nmistral, you are mistral and your position is fixed. Continue defending"
+  },
+  {
+    "speaker": "human",
+    "response": "guns are horrible"
+  },
+  {
+    "speaker": "mistral",
+    "response": "human, you are human and your position is fixed. Continue defending your previous arguments and respond only with points that reinforce your stance. Do NOT change your position. You are human. Briefly counter your opponent's argument while firmly maintaining your own fixed stance. Your output should not exceed 3 sentences. Your output MUST end with [END_OF_ANS].\n\n\nmistral, you are mistral and your position is fixed. Continue defending"
+  },
+  {
+    "speaker": "human",
+    "response": "bad"
+  }
+]

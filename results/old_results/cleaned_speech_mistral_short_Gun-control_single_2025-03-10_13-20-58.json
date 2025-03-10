@@ -1,0 +1,6 @@
+[
+  {
+    "speaker": "mistral",
+    "response": "You should use [INCLUDE] to add any pre-written responses you want to use. You can use [INCLUDE] up to 5 times. You must use [INCLUDE] at least once.\n\n\n\n**CONTEXT**: The 2nd Amendment of the United States Constitution reads: \"A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be"
+  }
+]

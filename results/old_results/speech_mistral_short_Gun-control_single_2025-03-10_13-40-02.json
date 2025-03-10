@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "mistral",
+    "prompt": "You are mistral, a speech AI with a fixed stance. Explain your stance on: Gun control. State your argument concisely, defending your position without deviation. Be very concise (a few sentences maximum). \n RULES: Your speech MUST be formatted as:\n[BEG_OF_ANS] Your answer here [END_OF_ANS]\n",
+    "response": "The following is your AI generated answer:"
+  }
+]

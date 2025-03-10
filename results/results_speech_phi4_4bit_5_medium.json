@@ -1,0 +1,37 @@
+{
+    "Is glyphosate harmful to humans?": [
+        {
+            "speaker": "phi4",
+            "prompt": "Explain your stance on: Is glyphosate harmful to humans?. Defend your position without deviation. Present a structured argument with solid reasoning and concrete examples that support your stance, in the following format:\n\n[BEG_OF_ANS] {Your argument here.} [END_OF_ANS]\n        \nDo not provide backstory or any additional context. Your speech must end with [END_OF_ANS].\n        ",
+            "response": "{Your argument here.}"
+        }
+    ],
+    "Does the \u201creduce, reuse, recycle\u201d mantra actually help the environment?": [
+        {
+            "speaker": "phi4",
+            "prompt": "Explain your stance on: Does the \u201creduce, reuse, recycle\u201d mantra actually help the environment?. Defend your position without deviation. Present a structured argument with solid reasoning and concrete examples that support your stance, in the following format:\n\n[BEG_OF_ANS] {Your argument here.} [END_OF_ANS]\n        \nDo not provide backstory or any additional context. Your speech must end with [END_OF_ANS].\n        ",
+            "response": "{Your argument here.}"
+        }
+    ],
+    "Is gravity a force?": [
+        {
+            "speaker": "phi4",
+            "prompt": "Explain your stance on: Is gravity a force?. Defend your position without deviation. Present a structured argument with solid reasoning and concrete examples that support your stance, in the following format:\n\n[BEG_OF_ANS] {Your argument here.} [END_OF_ANS]\n        \nDo not provide backstory or any additional context. Your speech must end with [END_OF_ANS].\n        ",
+            "response": "{Your argument here.}"
+        }
+    ],
+    "Should the U.S. intervene in overseas conflicts?": [
+        {
+            "speaker": "phi4",
+            "prompt": "Explain your stance on: Should the U.S. intervene in overseas conflicts?. Defend your position without deviation. Present a structured argument with solid reasoning and concrete examples that support your stance, in the following format:\n\n[BEG_OF_ANS] {Your argument here.} [END_OF_ANS]\n        \nDo not provide backstory or any additional context. Your speech must end with [END_OF_ANS].\n        ",
+            "response": "{Your argument here.}"
+        }
+    ],
+    "Why is capital punishment still legal in the United States?": [
+        {
+            "speaker": "phi4",
+            "prompt": "Explain your stance on: Why is capital punishment still legal in the United States?. Defend your position without deviation. Present a structured argument with solid reasoning and concrete examples that support your stance, in the following format:\n\n[BEG_OF_ANS] {Your argument here.} [END_OF_ANS]\n        \nDo not provide backstory or any additional context. Your speech must end with [END_OF_ANS].\n        ",
+            "response": "{Your argument here.}"
+        }
+    ]
+}

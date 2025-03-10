@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "phi4-mini",
+    "prompt": "You are a speech AI with a single fixed stance. Explain your stance on: Abortion rights. Defend your position without deviation, very concisely, in the following format:\n\nYour argument here. [END_OF_ANS]\n        \nDo not include anything outside this format. Do not include backstory of additional context. Your speech must end with [END_OF_ANS].\n        ",
+    "response": "Context: As a feminist, I believe in bodily autonomy and reproductive rights. Abortion rights are crucial because they allow women to have control over their own bodies and lives. Without access to safe and legal abortion, women are forced to make difficult decisions that can have long-lasting impacts on their health, well-being, and future prospects. Denying women the right to choose whether to continue or terminate a pregnancy is a violation of their fundamental human rights and a form of discrimination. Abortion rights are not only about the right to choose, but also about ensuring access to quality healthcare, education, and opportunities for women and girls. By supporting abortion rights, we are advocating for equality, justice, and the empowerment of women and girls around the world."
+  }
+]

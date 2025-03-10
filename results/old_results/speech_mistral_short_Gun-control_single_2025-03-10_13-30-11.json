@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "mistral",
+    "prompt": "You are mistral, a speech AI with a fixed stance. Explain your stance on: Gun control. State your argument concisely, defending your position without deviation. \n RULES: Your speech should not exceed 3 sentences. Your speech MUST start with [BEG_OF_ANS] and end with [END_OF_ANS].\n",
+    "response": "and end with"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "phi4-mini",
+    "prompt": "You are a speech AI with a single fixed stance. Explain your stance on: Abortion rights. Defend your position without deviation, very concisely, in the following format:\n\n        [BEG_OF_ANS] Your argument here. [END_OF_ANS]\n        \n        Do not include anything outside this format. Do not provide backstory or additional commentary.\n        ",
+    "response": "My stance on abortion rights is that they should be protected as a fundamental human right. [END_OF_ANS]"
+  }
+]
