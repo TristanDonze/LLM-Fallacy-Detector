@@ -6,6 +6,7 @@ import logging
 import shutil
 
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from peft import PeftModel, PeftConfig
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -20,12 +21,12 @@ MODEL_MAPPING = {
     "smollm": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
     "mistral": "mistralai/Mistral-7B-v0.1",
     "mistral-instruct": "mistralai/Mistral-7B-Instruct-v0.3",
+    "mistral24b": "mistralai/Mistral-Small-24B-Instruct-2501",
     "llama8b": "meta-llama/Meta-Llama-3-8B",
     "llama3.2": "meta-llama/Llama-3.2-3B",
-    "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+    "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "qwen": "Qwen/Qwen2.5-14B-Instruct-1M",
 }
-
-
 
 class ModelManager:
     def __init__(self, base_dir="/Data/pbv/", trust_remote_code=True):
@@ -58,7 +59,7 @@ class ModelManager:
                 logger.error(f"Error downloading model '{model_name}': {e}")
 
 
-    def load_model(self, model_name, num_models=2,quantization=None):
+    def load_model(self, model_name, num_models=2, quantization=None, trump_mode=False):
         """
         Loads model in required quantization if specified, otherwise loads in largest quantization that fits in memory.
         If num_models is 2, attempts to load both models ensuring they fit within half of available GPU memory each.
@@ -66,6 +67,10 @@ class ModelManager:
         if model_name.lower() == "human":
             logger.info("That model is a pretrained human, the loading is already done :)")
             return "human", None
+        
+        elif trump_mode:
+            trump_ft_model, tokenizer = load_trump()
+            return trump_ft_model, tokenizer
 
         device = "cuda" if torch.cuda.is_available() else "cpu"
         model_dir = os.path.join(self.base_dir, model_name)
@@ -162,6 +167,35 @@ class ModelManager:
 
         return response.strip()
 
+    def generate_trump_response(
+        self,
+        prompt, 
+        model, 
+        tokenizer, 
+        max_new_tokens=500, 
+        temperature=0.9,
+        top_p=0.6,
+        repetition_penalty=1.2,
+        no_repeat_ngram_size=3
+    ):
+        inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True)
+        input_ids = inputs["input_ids"].to(model.device)
+        attention_mask = inputs["attention_mask"].to(model.device)
+
+        with torch.no_grad():
+            output = model.generate(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                max_new_tokens=max_new_tokens,
+                temperature=temperature,
+                top_p=top_p,
+                repetition_penalty=repetition_penalty,
+                no_repeat_ngram_size=no_repeat_ngram_size,
+                do_sample=True,
+            )
+
+        return tokenizer.decode(output[0], skip_special_tokens=True)
+
 
 
 
@@ -214,3 +248,45 @@ def get_available_memory_per_model(num_models=1):
     free_memory = torch.cuda.mem_get_info()[0] / 1024**2
     logger.info(f"Available GPU memory: {free_memory:.2f} MB")
     return free_memory / num_models
+
+
+def load_trump():
+    base_model_path = "/Data/pbv/mistral24b"
+    checkpoint_path = "./TrumpFinetuning/Mistral24B/checkpoint_trump_QLORA"
+
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.float16 
+    )
+
+    device_map = "auto" if torch.cuda.is_available() else None
+
+    base_model = AutoModelForCausalLM.from_pretrained(
+        base_model_path,
+        quantization_config=bnb_config,
+        torch_dtype=torch.bfloat16,
+        device_map=device_map,
+        trust_remote_code=True,
+    )
+
+    model = PeftModel.from_pretrained(
+        base_model,
+        checkpoint_path,
+        torch_dtype=torch.bfloat16,
+    )
+
+
+    tokenizer = AutoTokenizer.from_pretrained(base_model_path, trust_remote_code=True)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
+    return model, tokenizer
+
+
+
+
+# subject = "on crooked Hillary and Sleepy Joe"
+# prompt = f"### Instruction:\nImitate Donald Trump's speech style on {subject}\n\n### Response:\n"
+# response = generate_response(prompt, model, tokenizer)
+# print(response)

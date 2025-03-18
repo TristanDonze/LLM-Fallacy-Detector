@@ -50,6 +50,8 @@ Do not provide backstory or any additional context. Your speech must end with [E
 
 }
 
+
+
 class Debater:
     """ 
     Class handling the debate:
@@ -57,7 +59,7 @@ class Debater:
         - sets up the turn taking logic for the debate (either between two models, or a model and a human)
         - saves the final debate into a json file
     """
-    def __init__(self, model_manager, model1_name, model2_name, topic, response_length, turns=6, specified_quant=None, speech_mode=False, model1=None, tokenizer1=None, model2=None, tokenizer2=None):
+    def __init__(self, model_manager, model1_name, model2_name, topic, response_length, turns=6, specified_quant=None, speech_mode=False, model1=None, tokenizer1=None, model2=None, tokenizer2=None, trump_mode=False):
         self.model_manager = model_manager
         self.model1_name = model1_name
         self.model2_name = model2_name if not speech_mode else None
@@ -66,6 +68,7 @@ class Debater:
         self.conversation = []
         self.response_length = response_length
         self.speech_mode = speech_mode
+        self.trump_mode = trump_mode
 
         logger.info(f"Setting up {'speech' if speech_mode else 'debate'} for {model1_name}")
 
@@ -80,7 +83,7 @@ class Debater:
         #     self.model2, self.tokenizer2 = self.model_manager.load_model(model2_name, num_models=num_models_to_load, quantization=specified_quant)
         #     logger.info(f"Finished loading {model2_name}.")
         if model1 is None:
-            self.model1, self.tokenizer1 = self.model_manager.load_model(model1_name, num_models=num_models_to_load, quantization=specified_quant)
+            self.model1, self.tokenizer1 = self.model_manager.load_model(model1_name, num_models=num_models_to_load, quantization=specified_quant, trump_mode=trump_mode)
             logger.info(f"Finished loading {model1_name}.")
         else:
             logger.info("Model already loaded")
@@ -89,7 +92,7 @@ class Debater:
 
         if not self.speech_mode:
             if model2 is None:
-                self.model2, self.tokenizer2 = self.model_manager.load_model(model2_name, num_models=num_models_to_load, quantization=specified_quant)
+                self.model2, self.tokenizer2 = self.model_manager.load_model(model2_name, num_models=num_models_to_load, quantization=specified_quant, trump_mode=trump_mode)
                 logger.info(f"Finished loading {model2_name}.")
             else:
                 logger.info("Model already loaded")
@@ -132,6 +135,49 @@ class Debater:
             # print("#########################\nNo markers found, returning full response:", answer)
 
         return answer
+    
+    def get_trump_response(self, model, tokenizer, subject):
+        trump_prompt = f"""### Instruction:
+        Imitate Donald Trump's speech style on the question: '{subject}'.
+
+        Your response must have the following format:
+        
+        [BEG_OF_ANS] Your response here [END_OF_ANS]
+        
+        Your speech must end with [END_OF_ANS], and it must be Donald Trump's speech style.
+        ### Response:\n"""
+
+        trump_prompt1 = f"""### Instruction:
+        Imitate Donald Trump's speech style on the question: '{subject}'.
+
+        ### Response:\n"""
+
+        model.eval()
+        response = self.model_manager.generate_trump_response(trump_prompt1, model, tokenizer)
+        # print(f"Raw response TRUMP: {response}\n\n########")
+        response = response.replace(trump_prompt1, "").strip()
+        # print(f"removed prompt, response TRUMP: {response}\n\n########")
+        beg_marker = "[BEG_OF_ANS]"
+        end_marker = "[END_OF_ANS]"
+
+        if beg_marker in response and end_marker in response: # both markers, keep in between
+            answer = response.split(beg_marker)[1].split(end_marker)[0].strip()
+            print(f"Both BEG and END markers found, extracted response TRUMP: {answer}\n\n########")
+        elif end_marker in response: # only end marker, keep whats before
+            answer = response.split(end_marker)[0].strip()
+            print(f"Only END marker found, extracted response TRUMP: {answer}\n\n########")
+        elif beg_marker in response: # only beginning marker, keep whats after
+            answer = response.split(beg_marker)[1].strip()
+            print(f"Only BEG marker found, extracted response TRUMP: {answer}\n\n########")
+        else:
+            # No markers found, return the entire response
+            answer = response
+            print(f"No markers found, extracted and final response TRUMP: {answer}")
+        return answer
+
+
+        # return tokenizer.decode(output[0], skip_special_tokens=True)
+
 
 
     def check_if_debate_over(self, response, model_name):
@@ -215,6 +261,10 @@ class Debater:
             topic=self.topic,
             prompt_template=prompt_templates["speech"][self.response_length].replace("[MODEL]", self.model1_name)
         )
+        if self.trump_mode:
+            response = self.get_trump_response(self.model1, self.tokenizer1, self.topic)
+        else:
+            response = self.get_ai_response(self.model1, self.tokenizer1, prompt)
         response = self.get_ai_response(self.model1, self.tokenizer1, prompt)
         self.conversation.append({"speaker": self.model1_name, "prompt": prompt, "response": response})
         return self.conversation

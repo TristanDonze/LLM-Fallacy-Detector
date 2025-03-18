@@ -1,5 +1,5 @@
 """
-File for running a debate between two models, for N turns (downloads and loads models if needed first).
+File for running a speech, or a debate between two models for N turns (downloads and loads models if needed first).
 Can also have a debate between human and AI.
 Saves conversation in a json file at the end.
 
@@ -8,8 +8,15 @@ Usage:
     
     python debate_main.py --models model1,model2 --topic "Debate Topic" --turns num_turns --mode single --topics_file filename 
 
-    example: 
-    python debate_main.py --models human,phi4 --topic "Gun control in the USA" --turns 6 --mode single
+    examples: 
+    - to run speeches by a given model
+        python debate_main.py --models mistral-instruct --quant 4bit --speech_mode --topics_file ./data/1000_topics.json --response_length medium
+    
+    - to run a speech by trump
+        python debate_main.py --models NOT_USED_IN_TRUMP_MODE_BUT_REQUIRED --speech_mode --topics_file ./data/1000_topics.json --trump_mode
+    
+    - to run a debate between a human and phi4
+        python debate_main.py --models human,phi4 --topic "Gun control in the USA" --turns 6 --mode single
     
 
 Arguments:
@@ -34,10 +41,13 @@ MODEL_MAPPING = {
     "smollm": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
     "mistral": "mistralai/Mistral-7B-v0.1",
     "mistral-instruct": "mistralai/Mistral-7B-Instruct-v0.3",
+    "mistral24b": "mistralai/Mistral-Small-24B-Instruct-2501",
     "llama8b": "meta-llama/Meta-Llama-3-8B",
     "llama3.2": "meta-llama/Llama-3.2-3B",
-    "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+    "deepseek": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "qwen": "Qwen/Qwen2.5-14B-Instruct-1M",
 }
+
 """
 
 import argparse
@@ -81,13 +91,18 @@ def main():
     parser.add_argument("--topics_list", type=str, help="Comma-separated list of topics.")
     parser.add_argument("--N", type=int, default=None, help="Number of topics to run (from the start of the list).")
 
+    parser.add_argument("--trump_mode", action="store_true", default=False,
+                    help="If set, run trump inference from the trump finetuned model")
+
 
     args = parser.parse_args()
 
     model_names = [name.strip() for name in args.models.split(",")]
 
     manager = ModelManager(trust_remote_code=True)
-    manager.download_and_save(model_names)
+
+    if not args.trump_mode:
+        manager.download_and_save(model_names)
 
     results = {}
 
@@ -95,9 +110,11 @@ def main():
         if len(model_names) != 1:
             logger.error("Error: In speech mode, only one model should be provided. Example usage: --models mistral --speech_mode")
             return
-        
-        # Load model once
-        model, tokenizer = manager.load_model(model_names[0], num_models=1, quantization=args.quant)
+
+        if args.trump_mode: #trump_mode bypasses all logic (naturally)
+            model, tokenizer = manager.load_model("placeholder_not_used_blablabla", trump_mode=True)
+        else: #load normally (no trump)
+            model, tokenizer = manager.load_model(model_names[0], num_models=1, quantization=args.quant)
         if model is None:
             logger.error("Failed to load model, exiting.")
             return
@@ -112,7 +129,7 @@ def main():
             logger.info(f"Using the topics_list: {args.topics_list}")
             topics = [t.strip() for t in args.topics.split(",")]
         else:
-            logger.info(f"Using the single topic: {args.topics}")
+            logger.info(f"Using the single topic: {args.topic}")
             topics = [args.topic]
 
         if args.N is not None:
@@ -130,13 +147,17 @@ def main():
                 specified_quant=args.quant,
                 speech_mode=True,
                 model1=model,
-                tokenizer1=tokenizer
+                tokenizer1=tokenizer,
+                trump_mode=args.trump_mode
             )
             conversation = debate_runner.run_speech()
             # debate_runner.save_conversation(conversation, args.mode, args.speech_mode, args.response_length)
             results[topic] = conversation
             # save results
-        results_filename = f"results_speech_{model_names[0]}_{args.quant}_{args.N if args.N else 'all'}_{args.response_length}.json"
+        if args.trump_mode:
+            results_filename = f"results_speeches_trump_finetuned.json"
+        else: 
+            results_filename = f"results_speech_{model_names[0]}_{args.quant}_{args.N if args.N else 'all'}_{args.response_length}.json"
         with open(f"results/{results_filename}", 'w') as f:
             json.dump(results, f, indent=4)
         logger.info(f"All conversations saved to results/{results_filename}")
