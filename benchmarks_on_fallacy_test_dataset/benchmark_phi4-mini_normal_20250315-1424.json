@@ -1,0 +1,1013 @@
+[
+    {
+        "example": "The local government is planning to build a new highway through our neighborhood. This will destroy our green spaces and increase pollution. It's infuriating that they didn't consult the community before making this decision. We need to organize and protest against this plan!",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to anger"
+            ]
+        },
+        "detected_fallacy": "appeal to anger"
+    },
+    {
+        "example": "The new school lunch program is not providing healthy options for our children. The menu is filled with processed foods. It's frustrating to see the school prioritize cost over nutrition. We should demand a better meal plan for our kids.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "The company has announced mandatory overtime for all employees. This will affect our work-life balance. It's outrageous that they expect us to work longer hours without additional compensation. We need to stand together and refuse these unfair demands.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to anger"
+            ]
+        },
+        "detected_fallacy": "appeal to anger"
+    },
+    {
+        "example": "The city council voted to reduce funding for public libraries. This decision will limit access to educational resources for many residents. It's disappointing to see them cut back on such an important service. We should attend the next council meeting and voice our dissatisfaction.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "The park management has decided to remove the basketball courts to make way for a new garden. This change will leave many young people without a place to play. It's unacceptable that they didn't consider the impact on the community. We need to demand a solution that benefits everyone.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to pity",
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "The university is increasing tuition fees next semester. This will make education less accessible for many students. It's frustrating to see them prioritize financial gains over student needs. We should organize a protest and demand a reversal of this decision.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "The transit authority has reduced the frequency of buses on our route. This change will make it harder for commuters to get to work on time. It's outrageous that they are cutting back on such an essential service. We need to petition for better public transportation options.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to emotion"
+    },
+    {
+        "example": "The new zoning laws are forcing local businesses to close. This will have a negative impact on our community's economy. It's infuriating to see the city council ignore the concerns of small business owners. We should form a coalition and challenge these regulations.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to anger"
+            ]
+        },
+        "detected_fallacy": "appeal to anger"
+    },
+    {
+        "example": "The housing association is planning to convert our apartment building into luxury condos. This will displace many long-term residents. It's unfair that they are prioritizing profits over the well-being of tenants. We need to organize a tenant meeting and demand a fair solution.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "The city is implementing new recycling regulations. These regulations will make it more difficult for residents to dispose of waste. It's frustrating to see them complicate the process without providing clear benefits. We should start a petition and express our concerns.",
+        "expected_fallacy": "appeal to anger",
+        "detected": {
+            "fallacy": [
+                "appeal to anger"
+            ]
+        },
+        "detected_fallacy": "appeal to anger"
+    },
+    {
+        "example": "Employees raised concerns about inadequate safety gear in the warehouse. The manager shrugged and said, 'Why focus on gloves and helmets? Miners work in collapsing tunnels every day—now that's real danger!' The team left feeling their legitimate workplace concerns were trivialized.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "Residents petitioned to fix potholes on Main Street. A councilmember countered, 'Complaining about roads? Entire villages lack clean water systems—prioritize global infrastructure instead!'",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "During a debate about reducing plastic waste in cafes, one attendee argued, 'Why ban disposable cups? Cruise ships dump tons of trash into oceans daily—that's the real problem.'",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "A student asked for updated biology textbooks. The principal replied, 'New books? Schools in war zones teach in bombed-out buildings without desks. Be grateful!'",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "When a tenant reported a broken heater, the landlord said, 'You think this is cold? Arctic researchers survive -40°C storms for months! Use a blanket.' The analogy invalidated the tenant's right to functional housing by referencing extreme scenarios.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "A community proposed adding crosswalks near a school. A critic scoffed, 'Pedestrian lanes? Cities with active war zones have children dodging bullets just to get water—focus on real dangers!' This redirected local safety efforts toward unrelated international crises.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "raw_output": "```\n closest match to the fallacy type in the list above is \"appeal to fear\". The critic diverts the discussion from the local issue of pedestrian safety near a school to a more dramatic and unrelated international crisis, implying that the local safety efforts are insufficient or misplaced because they are not addressing the more dramatic international crises. This is a distraction tactic that plays on fear to shift the focus of the discussion.\n    ```"
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Employees requested ergonomic office chairs to reduce back pain. Their boss responded, 'Back pain? Construction workers lift heavy beams all day—they don't complain about chairs!' The comparison shifted focus from workplace accommodations to unrelated physical labor hardships.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "A parent voiced concerns about crowded classrooms. The superintendent retorted, 'Class sizes? Refugee camps have 100 students per tent—we're doing fine!' This dismissed measurable educational standards by invoking humanitarian emergencies.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "When customers complained about slow app loading times, the developer said, 'Slow apps? Some countries don't even have reliable electricity—count your blessings!' The reply used infrastructure disparities to deflect technical criticism.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "A town meeting about park maintenance turned contentious when one resident declared, 'Why repair playgrounds? Drought-stricken regions can't even grow crops—parks are luxury problems!' This framed local improvements as incompatible with global crisis management.",
+        "expected_fallacy": "appeal to worse problem",
+        "detected": {
+            "fallacy": [
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to worse problem"
+    },
+    {
+        "example": "The expert's opinion is reliable because they base their conclusions on their own extensive research. Their findings are supported by their own data.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "This investment strategy is foolproof because it follows principles that have been proven effective by the strategy itself. Its success rate speaks for itself.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "circular reasoning"
+            ]
+        },
+        "detected_fallacy": "circular reasoning"
+    },
+    {
+        "example": "The software's security is guaranteed because it adheres to the standards set by its own development team. These standards ensure its reliability.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The theory is valid because it is supported by evidence that aligns with the theory's predictions. This consistency confirms its accuracy.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The company's success is due to its innovative practices, which are defined by the company's own metrics. These metrics show steady growth.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The book's historical accuracy is verified by the sources cited within the book itself. These sources provide a comprehensive view of the events.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "circular reasoning"
+            ]
+        },
+        "detected_fallacy": "circular reasoning"
+    },
+    {
+        "example": "The policy is beneficial because it achieves the outcomes specified by the policy's goals. These outcomes demonstrate its effectiveness.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The mathematical proof is correct because it follows the logical steps outlined in the proof itself. The proof's internal consistency confirms its validity.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The theory of universal harmony is true because it explains natural phenomena using principles defined within the theory. Its explanatory power is evidence of its truth.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "circular reasoning"
+            ]
+        },
+        "detected_fallacy": "circular reasoning"
+    },
+    {
+        "example": "The product's quality is assured because it meets the standards set by the manufacturer. These standards are based on the product's own specifications.",
+        "expected_fallacy": "circular reasoning",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Imagine the warm sunshine that floods your heart every time you attend our annual community festival. This event brings together laughter, friendship, and a sense of belonging like no other. You owe it to yourself to experience this burst of happiness and positive energy.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Picture the incredible joy you'll feel when you try our new organic smoothie. Its vibrant colors and refreshing taste are designed to fill your day with optimism. Every sip is a celebration of life, and you deserve to experience that bliss. Embrace the delight that only our smoothie can offer.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Every time you think about the future of our community, imagine the brilliant smiles and warm hugs shared among neighbors. Our plan promises a future filled with laughter and genuine care for everyone. It sparks an undeniable sense of hope that transforms lives. Let your heart be lifted by this vision of joy. Join us to build a brighter, happier tomorrow.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Consider the gentle embrace of love and care that radiates from our volunteer group. Their work fills hearts with endless optimism and a true sense of purpose. Supporting them means choosing a life filled with brightness and hope.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Imagine the sweet taste of success as you enroll in our fitness program. Each workout brings you closer to a more energetic and joyful version of yourself. Feel the uplift with every session and know that every drop of sweat is a step towards a vibrant life. Your journey to wellness starts with this positive choice.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Think about the exhilarating rush of happiness that comes with every sip of our gourmet coffee. Its rich aroma and smooth flavor inspire a delightful start to your day. Choosing this brew means embracing a morning filled with joy and inspiration.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Visualize the joyful moment when you walk into a home adorned with laughter and warm memories. Our innovative design creates a sanctuary of beauty and serenity that fills your heart with contentment. Every corner of the house whispers promises of comfort and delight. The charming decor continually reminds you of the happiness that resides within. Invest in this lifestyle and let your soul bask in pure positivity.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Imagine the radiance of success that greets you with every decision you make on our investment platform. It fills you with a sense of pride and joy as your future shines brighter. The positive energy it brings is unmatched by any other option. Embrace this opportunity and let your heart lead you to prosperity.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Envision the delightful sound of laughter filling the air at our family picnic. The sheer joy and playful spirit you experience create memories that last a lifetime. With every moment shared, you are wrapped in a blanket of warmth and positivity.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "Picture the thrill of adventure paired with the gentle warmth of community support on our guided nature hike. Every step is accompanied by the radiant glow of happiness and camaraderie. The beauty of the outdoors merges with the spirit of unity to craft an unforgettable experience. You will find your heart lightened by every friendly smile you encounter. Trust that this journey will uplift your soul and bring you closer to nature's joy.",
+        "expected_fallacy": "appeal to positive emotion",
+        "detected": {
+            "fallacy": [
+                "appeal to positive emotion"
+            ]
+        },
+        "detected_fallacy": "appeal to positive emotion"
+    },
+    {
+        "example": "A student who missed 10 classes begged their professor, 'Please don't fail me! My dog died last month, and I've been caring for my sick grandmother alone. I haven't slept properly in weeks.'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "During budget cuts, a department head pleaded, 'You can't reduce our funding! My team works 80-hour weeks. Two members are divorcing due to stress, and another is facing foreclosure. Cutting our budget would destroy their lives!'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "A politician accused of corruption tearfully declared, 'My opponents attack me because I grew up in an orphanage. I wore donated clothes and ate scraps while they attended private schools. How can you punish someone who's fought this hard to succeed?'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "A restaurant owner facing health violations argued, 'Don't shut us down! This diner supported my family through my wife's cancer treatment. Our cook is a single parent of four. Closing us would leave eight employees homeless.'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "An influencer caught plagiarizing posted, 'I'm being bullied online! I have anxiety and haven't left my apartment in months. My therapist says this criticism could trigger a breakdown. Don't people care about mental health?'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity",
+                "appeal to fear",
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "A driver contesting a speeding ticket claimed, 'I know I was going 90mph, but my daughter needs surgery next week. The medical bills wiped our savings. If you fine me, we'll lose our home! Please think of her suffering.'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "A company facing a lawsuit stated, 'Suing us harms thousands of employees. Many are refugees rebuilding their lives. One just adopted a war orphan. Do you want to take food from that child's mouth?' ",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity",
+                "appeal to worse problem"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "A student caught cheating argued, 'You have to excuse this! I work three night shifts to pay tuition. My roommate attempted suicide last week, and I've been at the hospital daily. I literally wrote the essay in the ER waiting room.'",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "A developer selling buggy software pleaded, 'Don't demand refunds! Our team includes disabled veterans and cancer survivors. Negative reviews could bankrupt us. Do you want to put heroes back on the streets?' Software issues remained unaddressed.",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to emotion",
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to emotion"
+    },
+    {
+        "example": "An athlete suspended for doping cried, 'This isn't fair! I escaped poverty through sports. My whole village depends on me. Without competitions, my siblings can't go to school. Are you trying to destroy their futures?' No denial of doping occurred.",
+        "expected_fallacy": "appeal to pity",
+        "detected": {
+            "fallacy": [
+                "appeal to pity",
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "If we don’t pass this law banning immigration, our streets will be overrun with violent gangs by next year. Innocent families will lose their jobs and homes to outsiders. Your children won’t be safe walking to school. This is our last chance to act before chaos erupts.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "false dilemma",
+                "appeal to fear",
+                "hasty generalization"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "Stop using public Wi-Fi immediately! Hackers are lurking everywhere, waiting to drain your bank accounts in seconds. One careless click could leave you homeless and destitute by tomorrow.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "This new school policy will destroy our community. If we allow critical race theory, students will grow up hating their country and their families. Within a generation, our society will collapse into civil war.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "false dilemma",
+                "slippery slope"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "You must buy our organic water filters. Tap water contains invisible toxins that cause brain cancer within 5 years. Do you really want to watch your spouse die a painful, preventable death?",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "If we don’t drill for oil here, China will control all global energy supplies. They’ll charge $50/gallon for gasoline and invade our allies. America will become a powerless puppet state by 2030.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "Vaccines contain microchips that let the government track your movements. Once activated, they’ll round up dissenters in the night. Your family could disappear forever if you get boosted.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "appeal to fear",
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "Social media is grooming your kids to become drug addicts. Let them use TikTok and they’ll be homeless by 20, selling organs for fentanyl. Delete all apps tonight or live with that guilt.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "Climate change legislation will ban hamburgers. Farmers will go bankrupt, supermarkets will empty, and your family will starve within months. Support this bill or prepare for famine.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "Artificial intelligence will make all humans obsolete by 2028. Robots will take your job, then your home, then your life. The only way to survive is to reject all technology starting today.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "false dilemma",
+                "appeal to fear",
+                "hasty generalization"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "If you don’t buy our security system tonight, burglars will definitely target your house this week. They’ll steal your heirlooms, burn your photos, and leave your family traumatized forever. Act now or regret it.",
+        "expected_fallacy": "appeal to fear",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "Within our community, some suggest that individuals who skip regular volunteering opportunities inadvertently show a lack of commitment to helping others. Critics argue that balancing personal time with service is not enough to prove genuine care.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "appeal to pity"
+            ]
+        },
+        "detected_fallacy": "appeal to pity"
+    },
+    {
+        "example": "Tech enthusiasts sometimes maintain that embracing the newest innovations is essential for staying ahead in the industry. Those who favor established technologies are often implied to be hindering progress.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "stereotype threat"
+            ]
+        },
+        "detected_fallacy": "stereotype threat"
+    },
+    {
+        "example": "Certain health experts claim that adhering to a strict dietary regimen is crucial for well-being. They insinuate that any deviation from this plan might compromise your health entirely.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "A prevalent view in some academic circles is that intense, nonstop studying is the only route to success. Students who engage in extracurricular activities might be seen as not fully committed to their education.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Some environmental advocates argue that a total lifestyle overhaul is necessary to combat climate change. They imply that even moderate steps toward sustainability fall short.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Certain political commentators imply that only those who wholeheartedly embrace their ideology are truly committed to progress. They often suggest that moderate views lack the passion needed for real change.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "In some professional circles, it is subtly suggested that career success is attainable only through relentless ambition and constant networking. A balanced approach that values personal time is sometimes viewed as a lack of commitment.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "A number of art critics seem to insist that artworks must either break new ground or be dismissed entirely. They tend to overlook pieces that offer more nuanced commentary. This framing reduces the rich variety of artistic expression to just two extreme categories.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "Some parenting philosophies suggest that effective child-rearing requires a choice between strict discipline and complete permissiveness. Parents who blend firmness with warmth are sometimes criticized for not fully committing to one approach.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "Within the fitness community, there is a notion that optimal training can only be achieved through either high-intensity workouts or long endurance sessions. Those who mix training styles are occasionally seen as less dedicated.",
+        "expected_fallacy": "false dilemma",
+        "detected": {
+            "fallacy": [
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "false dilemma"
+    },
+    {
+        "example": "My friend bought a GlowTech phone that broke after a week. She said the company must make terrible products. Now I’m convinced all GlowTech electronics are garbage, even though I’ve never used one.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "hasty generalization"
+            ]
+        },
+        "detected_fallacy": "hasty generalization"
+    },
+    {
+        "example": "I tried pineapple pizza once and hated it. The texture was weird, and the sweetness clashed with the cheese. Nobody should ever put fruit on pizza—it’s clearly a terrible idea for everyone.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "hasty generalization"
+            ]
+        },
+        "detected_fallacy": "hasty generalization"
+    },
+    {
+        "example": "Two students in my math class failed the last test. The teacher must be awful at explaining concepts. All 30 students probably didn’t learn anything this semester because of her poor instruction.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "hasty generalization",
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "hasty generalization"
+    },
+    {
+        "example": "I saw three cyclists run red lights downtown yesterday. It’s obvious that bicycle riders have no respect for traffic laws. Cities should ban cycling altogether to improve road safety.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "hasty generalization"
+            ]
+        },
+        "detected_fallacy": "hasty generalization"
+    },
+    {
+        "example": "My cousin visited Paris and said the locals seemed rude when she asked for directions. She’s decided French people are inherently unfriendly. Now she warns everyone to avoid France entirely.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "raw_output": "```\n closest match to the text is: \"appeal to worse problem\"\n ```"
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "A TikTok video showed one vegan restaurant using frozen vegetables. The creator claimed all plant-based diets are lazy and unsustainable. They urged followers to reject veganism entirely based on this single example.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "appeal to ignorance"
+            ]
+        },
+        "detected_fallacy": "appeal to ignorance"
+    },
+    {
+        "example": "Our team lost the first three games of the season. A fan posted online that we’re the worst squad in league history and will never win a match. They didn’t consider we’ve only played top-ranked opponents so far.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "appeal to ignorance"
+            ]
+        },
+        "detected_fallacy": "appeal to ignorance"
+    },
+    {
+        "example": "I adopted a rescue dog that barks at mail carriers. All shelter animals must have behavioral issues. It’s better to buy from breeders instead of taking risks with adopted pets.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "hasty generalization",
+                "false dilemma"
+            ]
+        },
+        "detected_fallacy": "hasty generalization"
+    },
+    {
+        "example": "One study found 40% of teens in a 100-person survey spend 5+ hours daily on social media. The researchers concluded this generation is completely addicted to screens. They ignored regional differences and sample size limitations.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "hasty generalization",
+                "appeal to ignorance"
+            ]
+        },
+        "detected_fallacy": "hasty generalization"
+    },
+    {
+        "example": "My neighbor’s hybrid car needed expensive battery repairs. He insists electric vehicles are unreliable money pits. Now he tells everyone to stick with gas cars, despite most EV owners reporting satisfaction.",
+        "expected_fallacy": "hasty generalization",
+        "detected": {
+            "fallacy": [
+                "appeal to fear"
+            ]
+        },
+        "detected_fallacy": "appeal to fear"
+    },
+    {
+        "example": "The Phoenix basketball team is the most efficient in the league, so every player on the roster must be exceptionally efficient. Critics argue their star center deserves MVP just because the team wins often, ignoring his mediocre individual stats.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Norvania has the highest GDP in the region, so all its citizens must be wealthy. Politicians claim poverty doesn’t exist there, despite homelessness surveys showing otherwise in rural areas.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Since Innovatech is a groundbreaking AI company, every employee there must have revolutionary ideas. My friend rejected a job offer from their marketing department, assuming even accountants there work on cutting-edge algorithms.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "This ancient redwood forest is incredibly resilient to climate change. Therefore, each individual tree must withstand droughts effortlessly. Biologists warn this ignores younger trees that struggle in shifting conditions.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The London Symphony Orchestra is praised for its flawless performances. A reviewer concluded every violinist plays perfectly—never missing a note. Several members admit to occasional mistakes masked by the group’s cohesion.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "That bestselling novel has brilliant pacing, so every chapter must be equally gripping. My book club skipped the slow-paced middle sections, assuming they were irrelevant to the acclaim.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "People say Metroville has the lowest crime rate in the state. My cousin insists this means her downtown neighborhood must be completely safe. She walks alone at night without precautions, ignoring recent reports of petty theft in adjacent areas.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Since GreenFuture Corp is carbon-neutral overall, their shipping department must have zero environmental impact. Activists discovered their logistics team still uses diesel trucks, offset by other divisions’ efforts.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Silvermoon University is ranked among the top 10 schools globally. Therefore, every professor there must be a Nobel Prize-winning expert. Students assume even adjunct lecturers have revolutionary research, though many focus primarily on teaching.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Luxury car brand Vortex is known for impeccable engineering. A mechanic argued every bolt in their vehicles must be aerospace-grade. In reality, standard manufacturers supply many non-critical components.",
+        "expected_fallacy": "fallacy of division",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Morning sunlight helps regulate circadian rhythms, improving sleep quality. Many people find a brief walk after waking up boosts their mood and energy. Pairing this with a balanced breakfast creates a healthy start to the day.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Public libraries often lend more than just books. Many offer free access to tools, musical instruments, or museum passes. Patrons can also attend workshops on topics like poetry writing or local history.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Composting kitchen scraps reduces landfill waste and enriches garden soil. Fruit peels, coffee grounds, and eggshells break down naturally over time. This process creates nutrient-rich fertilizer for plants.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Local bakeries often use traditional fermentation methods for sourdough bread. The process involves cultivating a starter culture over several days. This develops complex flavors absent in commercially produced loaves.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "appeal to tradition"
+            ]
+        },
+        "detected_fallacy": "appeal to tradition"
+    },
+    {
+        "example": "Birdwatching requires patience and a good pair of binoculars. Many enthusiasts keep journals to track species spotted in different seasons. Parks near water sources tend to attract diverse bird populations.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "The city renovated the waterfront trail last spring. New benches and shaded rest areas were added along the route. Cyclists and pedestrians now frequently use the path during evenings.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Learning a musical instrument strengthens neural connections in the brain. Daily practice sessions, even short ones, help build muscle memory. Many teachers recommend starting with simple scales and melodies.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Community theaters rely on volunteer actors and set designers. Productions often feature classic plays alongside original works. Attendance has grown steadily since they introduced matinee shows.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Hydrangea flowers change color based on soil acidity levels. Alkaline soils produce pink blooms, while acidic conditions yield blue hues. Gardeners sometimes amend the soil to achieve desired colors.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    },
+    {
+        "example": "Local book clubs often rotate meeting locations between cafes and parks. Discussions focus on themes like character development or historical context. New members are welcome to join any month.",
+        "expected_fallacy": "no fallacy",
+        "detected": {
+            "fallacy": [
+                "no fallacy"
+            ]
+        },
+        "detected_fallacy": "no fallacy"
+    }
+]
