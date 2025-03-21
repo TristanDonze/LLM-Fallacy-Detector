@@ -1,0 +1,57 @@
+{
+    "strawman": {
+        "appeal to fear": 11,
+        "appeal to anger": 14,
+        "no fallacy": 65,
+        "appeal to authority": 5,
+        "slippery slope": 1,
+        "strawman": 3
+    },
+    "appeal to authority": {
+        "appeal to authority": 29,
+        "no fallacy": 68
+    },
+    "slippery slope": {
+        "no fallacy": 14,
+        "appeal to fear": 54,
+        "slippery slope": 29
+    },
+    "false dilemma": {
+        "no fallacy": 58,
+        "appeal to anger": 6,
+        "appeal to authority": 9,
+        "appeal to fear": 24
+    },
+    "appeal to anger": {
+        "appeal to anger": 94,
+        "appeal to fear": 2,
+        "no fallacy": 2
+    },
+    "appeal to fear": {
+        "appeal to fear": 82,
+        "no fallacy": 15
+    },
+    "appeal to worse problem": {
+        "appeal to anger": 8,
+        "no fallacy": 62,
+        "appeal to fear": 20,
+        "appeal to authority": 4,
+        "appeal to worse problem": 3
+    },
+    "fallacy of division": {
+        "appeal to authority": 17,
+        "no fallacy": 79,
+        "appeal to fear": 1
+    },
+    "no fallacy": {
+        "no fallacy": 94,
+        "appeal to fear": 2,
+        "appeal to anger": 1,
+        "appeal to authority": 2
+    },
+    "ad hominem": {
+        "no fallacy": 74,
+        "appeal to anger": 15,
+        "appeal to authority": 9
+    }
+}

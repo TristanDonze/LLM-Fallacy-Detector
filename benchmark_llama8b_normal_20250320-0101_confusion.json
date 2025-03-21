@@ -1,0 +1,32 @@
+{
+    "strawman": {
+        "fallacy_type": 99
+    },
+    "appeal to authority": {
+        "fallacy_type": 97
+    },
+    "slippery slope": {
+        "fallacy_type": 97
+    },
+    "false dilemma": {
+        "fallacy_type": 97
+    },
+    "appeal to anger": {
+        "fallacy_type": 98
+    },
+    "appeal to fear": {
+        "fallacy_type": 97
+    },
+    "appeal to worse problem": {
+        "fallacy_type": 97
+    },
+    "fallacy of division": {
+        "fallacy_type": 97
+    },
+    "no fallacy": {
+        "fallacy_type": 99
+    },
+    "ad hominem": {
+        "fallacy_type": 98
+    }
+}

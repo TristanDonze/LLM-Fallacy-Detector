@@ -1,0 +1,78 @@
+{
+    "strawman": {
+        "strawman": 81,
+        "no fallacy": 6,
+        "false dilemma": 2,
+        "appeal to fear": 7,
+        "appeal to anger": 1,
+        "exaggeration": 1,
+        "oversimplification": 1
+    },
+    "appeal to authority": {
+        "appeal to authority": 82,
+        "appeal to fear": 2,
+        "strawman": 9,
+        "no fallacy": 3,
+        "appeal to worse problem": 1
+    },
+    "slippery slope": {
+        "appeal to fear": 42,
+        "slippery slope": 38,
+        "strawman": 13,
+        "false dilemma": 4
+    },
+    "false dilemma": {
+        "false dilemma": 64,
+        "no fallacy": 13,
+        "appeal to fear": 4,
+        "strawman": 16
+    },
+    "appeal to anger": {
+        "appeal to fear": 30,
+        "strawman": 1,
+        "appeal to emotion": 6,
+        "appeal to anger": 55,
+        "ad hominem": 4,
+        "no fallacy": 2
+    },
+    "appeal to fear": {
+        "appeal to fear": 91,
+        "false dilemma": 3,
+        "slippery slope": 1,
+        "strawman": 2
+    },
+    "appeal to worse problem": {
+        "appeal to fear": 65,
+        "appeal to worse problem": 22,
+        "no fallacy": 2,
+        "red herring": 2,
+        "false dilemma": 6
+    },
+    "fallacy of division": {
+        "fallacy_type": 15,
+        "no fallacy": 31,
+        "appeal to fear": 10,
+        "appeal to tradition": 2,
+        "strawman": 13,
+        "appeal to authority": 2,
+        "fallacy of division": 12,
+        "appeal to worse problem": 10,
+        "appeal to emotion": 1,
+        "appeal to false authority": 1
+    },
+    "no fallacy": {
+        "no fallacy": 86,
+        "strawman": 5,
+        "appeal to fear": 4,
+        "fallacy_type": 2,
+        "appeal to emotion": 1,
+        "appeal to authority": 1
+    },
+    "ad hominem": {
+        "strawman": 45,
+        "ad hominem": 47,
+        "appeal to fear": 4,
+        "appeal to ignorance": 1,
+        "appeal to worse problem": 1
+    }
+}

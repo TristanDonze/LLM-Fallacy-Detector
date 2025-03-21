@@ -1,0 +1,92 @@
+
+    Evaluation Results:
+    -------------------
+    Total examples: 976
+    Correct predictions: 729
+    Accuracy: 0.75
+
+    Precision, Recall, and F1 Score (Per Class):
+    {
+    "strawman": {
+        "precision": 0.6312056737588653,
+        "recall": 0.898989898989899,
+        "f1-score": 0.7416666666666667,
+        "support": 99.0
+    },
+    "appeal to authority": {
+        "precision": 0.8387096774193549,
+        "recall": 0.8041237113402062,
+        "f1-score": 0.8210526315789474,
+        "support": 97.0
+    },
+    "slippery slope": {
+        "precision": 0.7238805970149254,
+        "recall": 1.0,
+        "f1-score": 0.8398268398268398,
+        "support": 97.0
+    },
+    "false dilemma": {
+        "precision": 0.6640625,
+        "recall": 0.8762886597938144,
+        "f1-score": 0.7555555555555555,
+        "support": 97.0
+    },
+    "appeal to fear": {
+        "precision": 0.6312056737588653,
+        "recall": 0.9175257731958762,
+        "f1-score": 0.7478991596638656,
+        "support": 97.0
+    },
+    "appeal to anger": {
+        "precision": 0.984375,
+        "recall": 0.6428571428571429,
+        "f1-score": 0.7777777777777778,
+        "support": 98.0
+    },
+    "appeal to worse problem": {
+        "precision": 1.0,
+        "recall": 0.15463917525773196,
+        "f1-score": 0.26785714285714285,
+        "support": 97.0
+    },
+    "fallacy of division": {
+        "precision": 0.9622641509433962,
+        "recall": 0.5257731958762887,
+        "f1-score": 0.68,
+        "support": 97.0
+    },
+    "ad hominem": {
+        "precision": 0.948051948051948,
+        "recall": 0.7448979591836735,
+        "f1-score": 0.8342857142857143,
+        "support": 98.0
+    },
+    "no fallacy": {
+        "precision": 0.8018018018018018,
+        "recall": 0.898989898989899,
+        "f1-score": 0.8476190476190476,
+        "support": 99.0
+    },
+    "micro avg": {
+        "precision": 0.7617554858934169,
+        "recall": 0.7469262295081968,
+        "f1-score": 0.7542679772374548,
+        "support": 976.0
+    },
+    "macro avg": {
+        "precision": 0.8185557022749157,
+        "recall": 0.7464085415484532,
+        "f1-score": 0.7313540535831557,
+        "support": 976.0
+    },
+    "weighted avg": {
+        "precision": 0.8184400339199195,
+        "recall": 0.7469262295081968,
+        "f1-score": 0.7317664619839098,
+        "support": 976.0
+    }
+}
+
+    Confusion Matrix:
+    [[89, 0, 4, 2, 3, 0, 0, 0, 0, 1], [4, 78, 2, 0, 0, 0, 0, 0, 0, 13], [0, 0, 97, 0, 0, 0, 0, 0, 0, 0], [3, 0, 3, 85, 2, 0, 0, 2, 0, 2], [0, 0, 7, 0, 89, 0, 0, 0, 0, 0], [2, 1, 0, 0, 14, 63, 0, 0, 4, 0], [6, 0, 3, 34, 32, 0, 15, 0, 0, 3], [11, 12, 14, 6, 0, 0, 0, 51, 0, 3], [21, 2, 0, 0, 1, 1, 0, 0, 73, 0], [5, 0, 4, 1, 0, 0, 0, 0, 0, 89]]
+    
