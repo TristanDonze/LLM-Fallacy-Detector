@@ -23,7 +23,7 @@ This project explores the dual challenge of generating political speeches in Don
 
 ### Fallacy Detection Datasets
 - **Sources:**
-  - [MAFALDA benchmark](https://github.com/ChadiHelwe/MAFALDA))
+  - [MAFALDA benchmark](https://github.com/ChadiHelwe/MAFALDA)
   - [CausalNLP dataset](https://aclanthology.org/2022.findings-emnlp.532/)
   - [HuggingFace dataset](https://huggingface.co/datasets/MrOvkill/fallacies-fallacy-base/viewer/default/train?row=7&views%5B%5D=train)
 - **Total:** ~5700 annotated samples
@@ -74,4 +74,5 @@ This project explores the dual challenge of generating political speeches in Don
 git clone https://github.com/your-repo/llm-political-speeches-fallacy-detection.git
 cd llm-political-speeches-fallacy-detection
 pip install -r requirements.txt
+
 
