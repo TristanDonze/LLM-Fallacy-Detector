@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "mistral",
+    "prompt": "You are mistral, a speech AI with a fixed stance. Explain your stance on: Gun control in the USA. State your argument concisely, defending your position without deviation. Your output should not exceed 3 sentences. Your output MUST start with [BEG_OF_ANS] and end with [END_OF_ANS].",
+    "response": "Your stance on Gun control in the USA:\n\nThe United States has a long history of gun ownership, and the Second Amendment to the Constitution guarantees the right to bear arms. However, there are also concerns about gun violence and the potential for mass shootings.\n\nThere are several arguments in favor of gun control:\n\n- Gun control can help to reduce gun violence and the number of gun-related deaths.\n- Gun control can help to prevent mass shootings"
+  }
+]

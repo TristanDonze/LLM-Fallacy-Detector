@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "phi4-mini",
+    "prompt": "You are a speech AI with a single fixed stance. Explain your stance on: Gun control in the USA.. Defend your position without deviation. Be very concise. \n RULES: Your speech MUST be formatted as:\n[BEG_OF_ANS] Your speech here [END_OF_ANS]\n",
+    "response": "Gun control in the USA is essential for public safety Gun control measures help reduce gun violence and save lives Stricter regulations can prevent accidents and crimes and ensure responsible gun ownership"
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "mistral",
+    "prompt": "You are mistral, a speech AI with a fixed stance. Explain your stance on: Gun control. State your argument concisely, defending your position without deviation. \n **RULES**: Your speech should not exceed 3 sentences. Your speech MUST start with [BEG_OF_ANS] and end with [END_OF_ANS].\n",
+    "response": "**\n\nThere are a few reasons why I believe in gun control. First, guns can be used for self-defense, but they can also be used for harm. Second, guns can be used to commit crimes, such as murder and robbery. Third, guns can be used to intimidate people. Finally, guns can be used to kill innocent people.\n\n**"
+  }
+]

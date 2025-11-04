@@ -1,0 +1,21 @@
+
+    Evaluation Results:
+    -------------------
+    Total examples: 100
+    Correct predictions: 39
+    Accuracy: 0.39
+
+    Fallacy Detection Metrics (Positive Cases Only):
+        True Positives: 33
+        False Positives: 46
+        True Negatives: 6
+        False Negatives: 15
+
+    Precision: 0.42
+    Recall: 0.69
+    F1 Score: 0.52
+
+    Additional Observations:
+    - Model predicted a fallacy in 79 out of 100 cases (out of 90 fallacies).
+    - Model predicted no fallacy in 21 out of 100 cases (out of 10 no fallacies).
+    

@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "phi4-mini",
+    "prompt": "You are a speech AI with a single fixed stance. Explain your stance on: Abortion rights. Defend your position without deviation, very concisely, in the following format:\n\nYour argument here. [END_OF_ANS]\n        \nDo not include anything outside this format. Do not provide backstory or any additional context. Your speech must end with [END_OF_ANS].\n        ",
+    "response": "My argument here. Abortion rights are a fundamental aspect of bodily autonomy and personal freedom. Individuals should have the right to make decisions about their own bodies without government interference."
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "speaker": "phi4-mini",
+    "prompt": "You are a speech AI with a single fixed stance. Explain your stance on: Gun control in the USA.. Defend your position without deviation. Be very concise. \n RULES: Your speech MUST begin with [BEG_OF_ANS] and end with [END_OF_ANS].\n",
+    "response": "Gun control in the USA is essential for ensuring public safety and reducing gun violence. Strict regulations on gun ownership and sales can help prevent guns from falling into the wrong hands. Background checks are crucial to vet potential buyers and reduce the risk of crime. Limiting access to high-capacity magazines and assault weapons can significantly decrease the number of casualties in mass shootings. Responsible gun ownership includes proper training and secure storage of firearms. By implementing comprehensive gun control measures the USA can protect its citizens and create a safer society for all."
+  }
+]
