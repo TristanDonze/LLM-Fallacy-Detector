@@ -1,0 +1,104 @@
+[metacarpe LLM-Fallacious]$ accelerate launch Finetuning.py
+[2025-03-11 09:03:26,779] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Warning: The cache directory for DeepSpeed Triton autotune, /users/eleves-a/2024/tristan.donze/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+2025-03-11 09:03:33 - INFO - __main__ - Initializing TrumpFineTuner with config:
+2025-03-11 09:03:33 - INFO - __main__ - FineTuneConfig(model_name_or_path='microsoft/Phi-4-mini-instruct', dataset_path='All_Speeches_Instruction.jsonl', output_dir='./checkpoint_trump', num_train_epochs=1, per_device_train_batch_size=4, per_device_eval_batch_size=2, learning_rate=5e-06, logging_steps=20, save_steps=100, seed=42, lora_r=32, lora_alpha=64, lora_dropout=0.05, bf16=True, resume_from_checkpoint='./checkpoint_trump/checkpoint-100')
+[2025-03-11 09:03:33,504] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Warning: The cache directory for DeepSpeed Triton autotune, .triton/cache, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[2025-03-11 09:03:34,610] [INFO] [comm.py:658:init_distributed] cdb=None
+[2025-03-11 09:03:34,611] [INFO] [comm.py:689:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+2025-03-11 09:03:34 - INFO - __main__ - DeepSpeed Trainer Batch Params:
+2025-03-11 09:03:34 - INFO - __main__ -     per_device_train_batch_size: 4
+2025-03-11 09:03:34 - INFO - __main__ -     gradient_accumulation_steps: 8
+2025-03-11 09:03:34 - INFO - __main__ -     Calculated train_batch_size: 32
+2025-03-11 09:03:34 - INFO - __main__ - Loading dataset from All_Speeches_Instruction.jsonl
+2025-03-11 09:03:35 - INFO - __main__ - Splitting dataset 90-10 for train/test.
+2025-03-11 09:03:35 - INFO - __main__ - Applying preprocessing to training set...
+Preprocessing train dataset: 100%|████████████████████████████████████████████████████████████████████████████| 14963/14963 [00:01<00:00, 11045.90 examples/s]
+2025-03-11 09:03:36 - INFO - __main__ - Applying preprocessing to test set...
+Preprocessing test dataset: 100%|███████████████████████████████████████████████████████████████████████████████| 1663/1663 [00:00<00:00, 10849.32 examples/s]
+2025-03-11 09:03:36 - INFO - __main__ - Loading model from microsoft/Phi-4-mini-instruct...
+[2025-03-11 09:03:37,055] [INFO] [config.py:734:__init__] Config mesh_device None world_size = 1
+[2025-03-11 09:03:38,851] [INFO] [partition_parameters.py:348:__exit__] finished initializing model - num_params = 195, num_elems = 4.45B
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:02<00:00,  1.28s/it]
+2025-03-11 09:03:42 - INFO - __main__ - Model and tokenizer loaded.
+2025-03-11 09:03:42 - INFO - __main__ - Creating the SFTTrainer with LoRA config.
+Converting train dataset to ChatML: 100%|█████████████████████████████████████████████████████████████████████| 14963/14963 [00:00<00:00, 22837.28 examples/s]
+Applying chat template to train dataset: 100%|████████████████████████████████████████████████████████████████| 14963/14963 [00:00<00:00, 21848.38 examples/s]
+Tokenizing train dataset:   0%|                                                                                              | 0/14963 [00:00<?, ? examples/s]Token indices sequence length is longer than the specified maximum sequence length for this model (6085 > 2048). Running this sequence through the model will result in indexing errors
+Tokenizing train dataset:  33%|██████████████████████████▌                                                      | 4898/14963 [00:03<00:06, 1525.03 examples/s]Tokenizing train dataset: 100%|████████████████████████████████████████████████████████████████████████████████| 14963/14963 [00:10<00:00, 1398.91 examples/s]
+Truncating train dataset: 100%|████████████████████████████████████████████████████████████████████████████████| 14963/14963 [00:05<00:00, 2683.72 examples/s]
+Converting eval dataset to ChatML: 100%|████████████████████████████████████████████████████████████████████████| 1663/1663 [00:00<00:00, 22145.16 examples/s]
+Applying chat template to eval dataset: 100%|███████████████████████████████████████████████████████████████████| 1663/1663 [00:00<00:00, 19975.34 examples/s]
+Tokenizing eval dataset: 100%|███████████████████████████████████████████████████████████████████████████████████| 1663/1663 [00:01<00:00, 1394.21 examples/s]
+Truncating eval dataset: 100%|███████████████████████████████████████████████████████████████████████████████████| 1663/1663 [00:00<00:00, 2773.71 examples/s]
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+2025-03-11 09:04:02 - INFO - __main__ - Starting training. Resume? ./checkpoint_trump/checkpoint-100
+Installed CUDA version 12.6 does not match the version torch was compiled with 12.4 but since the APIs are compatible, accepting this combination
+Using /users/eleves-a/2024/tristan.donze/.cache/torch_extensions/py312_cu124 as PyTorch extensions root...
+Emitting ninja build file /users/eleves-a/2024/tristan.donze/.cache/torch_extensions/py312_cu124/cpu_adam/build.ninja...
+Building extension module cpu_adam...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module cpu_adam...
+Time to load cpu_adam op: 0.45267343521118164 seconds
+Parameter Offload: Total persistent parameters: 46337024 in 321 params
+{'loss': 2.5595, 'grad_norm': 0.3296051621437073, 'learning_rate': 3.715203426124197e-06, 'mean_token_accuracy': 0.45376122947782277, 'epoch': 0.26}          
+{'eval_loss': 2.5439963340759277, 'eval_runtime': 731.1563, 'eval_samples_per_second': 2.274, 'eval_steps_per_second': 1.138, 'eval_mean_token_accuracy': 0.4565726542988649, 'epoch': 0.26}                                                                                                                                
+{'loss': 2.534, 'grad_norm': 0.2803366482257843, 'learning_rate': 3.5010706638115632e-06, 'mean_token_accuracy': 0.454864620231092, 'epoch': 0.3}             
+{'eval_loss': 2.5314056873321533, 'eval_runtime': 726.7895, 'eval_samples_per_second': 2.288, 'eval_steps_per_second': 1.145, 'eval_mean_token_accuracy': 0.4578824218792411, 'epoch': 0.3}                                                                                                                                 
+{'loss': 2.5307, 'grad_norm': 0.2890453636646271, 'learning_rate': 3.2869379014989295e-06, 'mean_token_accuracy': 0.4560103215277195, 'epoch': 0.34}          
+{'eval_loss': 2.5226383209228516, 'eval_runtime': 726.4222, 'eval_samples_per_second': 2.289, 'eval_steps_per_second': 1.145, 'eval_mean_token_accuracy': 0.4590696574976811, 'epoch': 0.34}                                                                                                                                
+{'loss': 2.524, 'grad_norm': 0.31314563751220703, 'learning_rate': 3.0728051391862957e-06, 'mean_token_accuracy': 0.4563083192333579, 'epoch': 0.38}          
+{'eval_loss': 2.5152549743652344, 'eval_runtime': 726.9824, 'eval_samples_per_second': 2.288, 'eval_steps_per_second': 1.144, 'eval_mean_token_accuracy': 0.45982643027001846, 'epoch': 0.38}                                                                                                                               
+{'loss': 2.5141, 'grad_norm': 0.28771835565567017, 'learning_rate': 2.858672376873662e-06, 'mean_token_accuracy': 0.4582102870568633, 'epoch': 0.43}          
+{'eval_loss': 2.5092344284057617, 'eval_runtime': 727.0682, 'eval_samples_per_second': 2.287, 'eval_steps_per_second': 1.144, 'eval_mean_token_accuracy': 0.46077531984505743, 'epoch': 0.43}                                                                                                                               
+{'loss': 2.5067, 'grad_norm': 0.296845942735672, 'learning_rate': 2.6445396145610282e-06, 'mean_token_accuracy': 0.45912481732666494, 'epoch': 0.47}          
+{'eval_loss': 2.50345778465271, 'eval_runtime': 727.2624, 'eval_samples_per_second': 2.287, 'eval_steps_per_second': 1.144, 'eval_mean_token_accuracy': 0.4611411822171739, 'epoch': 0.47}                                                                                                                                  
+{'loss': 2.5027, 'grad_norm': 0.3281900882720947, 'learning_rate': 2.430406852248394e-06, 'mean_token_accuracy': 0.45956988986581565, 'epoch': 0.51}          
+{'eval_loss': 2.498314380645752, 'eval_runtime': 726.0074, 'eval_samples_per_second': 2.291, 'eval_steps_per_second': 1.146, 'eval_mean_token_accuracy': 0.46176192497548, 'epoch': 0.51}                                                                                                                                   
+{'loss': 2.5092, 'grad_norm': 0.3864646553993225, 'learning_rate': 2.2162740899357603e-06, 'mean_token_accuracy': 0.4579548167064786, 'epoch': 0.56}          
+{'eval_loss': 2.4934020042419434, 'eval_runtime': 725.1644, 'eval_samples_per_second': 2.293, 'eval_steps_per_second': 1.147, 'eval_mean_token_accuracy': 0.4623701824949911, 'epoch': 0.56}                                                                                                                                
+{'loss': 2.4971, 'grad_norm': 0.3708217442035675, 'learning_rate': 2.0021413276231265e-06, 'mean_token_accuracy': 0.4577787036076188, 'epoch': 0.6}           
+{'eval_loss': 2.4892189502716064, 'eval_runtime': 725.1891, 'eval_samples_per_second': 2.293, 'eval_steps_per_second': 1.147, 'eval_mean_token_accuracy': 0.4629437444158472, 'epoch': 0.6}                                                                                                                                 
+{'loss': 2.4752, 'grad_norm': 0.3843255937099457, 'learning_rate': 1.7880085653104925e-06, 'mean_token_accuracy': 0.4645723419263959, 'epoch': 0.64}          
+{'eval_loss': 2.4854230880737305, 'eval_runtime': 724.8371, 'eval_samples_per_second': 2.294, 'eval_steps_per_second': 1.148, 'eval_mean_token_accuracy': 0.46335682491413677, 'epoch': 0.64}                                                                                                                               
+{'loss': 2.4772, 'grad_norm': 0.37340760231018066, 'learning_rate': 1.5738758029978588e-06, 'mean_token_accuracy': 0.46399072632193566, 'epoch': 0.68}        
+{'eval_loss': 2.4814248085021973, 'eval_runtime': 725.3039, 'eval_samples_per_second': 2.293, 'eval_steps_per_second': 1.147, 'eval_mean_token_accuracy': 0.463925295151197, 'epoch': 0.68}                                                                                                                                 
+{'loss': 2.4857, 'grad_norm': 0.4046914577484131, 'learning_rate': 1.359743040685225e-06, 'mean_token_accuracy': 0.4614179698750377, 'epoch': 0.73}           
+{'eval_loss': 2.4780399799346924, 'eval_runtime': 724.5389, 'eval_samples_per_second': 2.295, 'eval_steps_per_second': 1.148, 'eval_mean_token_accuracy': 0.46435319951090676, 'epoch': 0.73}                                                                                                                               
+{'loss': 2.4751, 'grad_norm': 0.4399511516094208, 'learning_rate': 1.145610278372591e-06, 'mean_token_accuracy': 0.46420053094625474, 'epoch': 0.77}          
+{'eval_loss': 2.474480390548706, 'eval_runtime': 724.7004, 'eval_samples_per_second': 2.295, 'eval_steps_per_second': 1.148, 'eval_mean_token_accuracy': 0.4649387769974195, 'epoch': 0.77}                                                                                                                                 
+{'loss': 2.4768, 'grad_norm': 0.394205778837204, 'learning_rate': 9.314775160599572e-07, 'mean_token_accuracy': 0.4621773146092892, 'epoch': 0.81}            
+{'eval_loss': 2.4712371826171875, 'eval_runtime': 724.3028, 'eval_samples_per_second': 2.296, 'eval_steps_per_second': 1.149, 'eval_mean_token_accuracy': 0.46540740232628125, 'epoch': 0.81}                                                                                                                               
+{'loss': 2.4785, 'grad_norm': 0.40155577659606934, 'learning_rate': 7.173447537473234e-07, 'mean_token_accuracy': 0.4620505074039102, 'epoch': 0.86}          
+{'eval_loss': 2.4682514667510986, 'eval_runtime': 727.0133, 'eval_samples_per_second': 2.287, 'eval_steps_per_second': 1.144, 'eval_mean_token_accuracy': 0.46568090586851424, 'epoch': 0.86}                                                                                                                               
+{'loss': 2.4756, 'grad_norm': 0.3903542757034302, 'learning_rate': 5.032119914346896e-07, 'mean_token_accuracy': 0.46354103200137614, 'epoch': 0.9}           
+{'eval_loss': 2.464986801147461, 'eval_runtime': 728.8278, 'eval_samples_per_second': 2.282, 'eval_steps_per_second': 1.142, 'eval_mean_token_accuracy': 0.46610760867882234, 'epoch': 0.9}                                                                                                                                 
+{'loss': 2.4588, 'grad_norm': 0.4016667902469635, 'learning_rate': 2.890792291220557e-07, 'mean_token_accuracy': 0.46581718046218157, 'epoch': 0.94}          
+{'eval_loss': 2.462048053741455, 'eval_runtime': 720.5214, 'eval_samples_per_second': 2.308, 'eval_steps_per_second': 1.155, 'eval_mean_token_accuracy': 0.46668327793192405, 'epoch': 0.94}                                                                                                                                
+{'loss': 2.4705, 'grad_norm': 0.42128732800483704, 'learning_rate': 7.494646680942185e-08, 'mean_token_accuracy': 0.4649257777258754, 'epoch': 0.98}          
+{'eval_loss': 2.459282636642456, 'eval_runtime': 719.4535, 'eval_samples_per_second': 2.311, 'eval_steps_per_second': 1.156, 'eval_mean_token_accuracy': 0.46698832558467984, 'epoch': 0.98}                                                                                                                                
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 467/467 [5:29:22<00:00, 43.41s/it]/users/eleves-a/2024/tristan.donze/.local/lib/python3.12/site-packages/peft/utils/other.py:716: UserWarning: Unable to fetch remote file due to the following error (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /microsoft/Phi-4-mini-instruct/resolve/main/config.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f2cebe169c0>: Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 594534b9-5956-42c7-85ed-aedda7a5e152)') - silently ignoring the lookup for the file config.json in microsoft/Phi-4-mini-instruct.
+  warnings.warn(
+/users/eleves-a/2024/tristan.donze/.local/lib/python3.12/site-packages/peft/utils/save_and_load.py:246: UserWarning: Could not find a config file in microsoft/Phi-4-mini-instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+{'train_runtime': 19771.6794, 'train_samples_per_second': 0.757, 'train_steps_per_second': 0.024, 'train_loss': 1.962091556197826, 'mean_token_accuracy': 0.46721456572413445, 'epoch': 1.0}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 467/467 [5:29:31<00:00, 42.34s/it]
+2025-03-11 14:33:41 - INFO - __main__ - Training complete. Metrics:
+2025-03-11 14:33:41 - INFO - __main__ - {'train_runtime': 19771.6794, 'train_samples_per_second': 0.757, 'train_steps_per_second': 0.024, 'total_flos': 2045322165485568.0, 'train_loss': 1.962091556197826}
+/users/eleves-a/2024/tristan.donze/.local/lib/python3.12/site-packages/peft/utils/other.py:716: UserWarning: Unable to fetch remote file due to the following error (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /microsoft/Phi-4-mini-instruct/resolve/main/config.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f2bac35f140>: Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: 1c40f4b1-44c5-4053-a993-55fa35d55a3c)') - silently ignoring the lookup for the file config.json in microsoft/Phi-4-mini-instruct.
+  warnings.warn(
+/users/eleves-a/2024/tristan.donze/.local/lib/python3.12/site-packages/peft/utils/save_and_load.py:246: UserWarning: Could not find a config file in microsoft/Phi-4-mini-instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+2025-03-11 14:33:46 - INFO - __main__ - Evaluating on the test set...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 832/832 [12:01<00:00,  1.15it/s]2025-03-11 14:45:49 - INFO - __main__ - {'eval_loss': 2.458096742630005, 'eval_runtime': 723.0566, 'eval_samples_per_second': 2.3, 'eval_steps_per_second': 1.151, 'perplexity': 11.682555457397932}
+[metacarpe LLM-Fallacious]$ python inference.py
+/users/eleves-a/2024/tristan.donze/.local/bin/python3.12: can't open file '/users/eleves-a/2024/tristan.donze/LLM-Fallacious/inference.py': [Errno 2] No such file or directory
+[metacarpe LLM-Fallacious]$ python Inference.py
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00,  7.06it/s]
+### Instruction:
+Imitate Donald Trump's speech style on the danger of immigration 
+
+### Response:
+But you know what? You’re not going to have to worry about that. I’m going to stop immigration. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop it. I’m going to stop
